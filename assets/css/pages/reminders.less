@@ -1,0 +1,66 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+:root {
+  --reminders-background-color: var(--fifteenth-color);
+  --reminders-border-color: var(--sixteenth-color);
+  --reminders-title-color: var(--second-color);
+  --reminders-description-color: var(--second-color);
+  --reminders-due-at-color: var(--second-color);
+}
+
+main.reminders-page {
+  .reminders {
+    display: block;
+    float: left;
+    width: 100%;
+
+    .reminder {
+      display: block;
+      float: left;
+      width: 100%;
+      border: 1px solid var(--reminders-border-color);
+      margin-bottom: 15px;
+      background: var(--reminders-background-color);
+      overflow: hidden;
+
+      .title {
+        display: block;
+        float: left;
+        width: calc(~"100% - 30px");
+        padding: 0;
+        margin: 15px 15px 7.5px;
+        color: var(--reminders-title-color);
+        font-size: 1em;
+        font-weight: 500;
+      }
+
+      .description {
+        display: block;
+        float: left;
+        width: calc(~"100% - 30px");
+        padding: 0;
+        margin: 7.5px 15px;
+        color: var(--reminders-description-color);
+        font-size: 1em;
+        font-weight: 400;
+      }
+
+      .due-at {
+        display: block;
+        float: left;
+        width: calc(~"100% - 30px");
+        padding: 0;
+        margin: 7.5px 15px 15px;
+        color: var(--reminders-due-at-color);
+        font-size: 0.9em;
+        font-weight: 400;
+      }
+    }
+  }
+}

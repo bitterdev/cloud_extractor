@@ -1,0 +1,319 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+@contact-list-item-height: 35px;
+
+:root {
+  --contact-list-background-color: var(--ninth-color);
+  --contact-list-border-color: var(--twelfth-color);
+  --contact-list-normal-item-text-color: var(--thirteenth-color);
+  --contact-list-normal-item-background-color: var(--ninth-color);
+  --contact-list-active-item-text-color: var(--thirteenth-color);
+  --contact-list-active-item-background-color: var(--fourteenth-color);
+  --contact-details-background-color: var(--ninth-color);
+  --contact-details-border-color: var(--twelfth-color);
+  --contact-details-item-name-text-color: var(--second-color);
+  --contact-details-item-job-title-text-color: var(--second-color);
+  --contact-details-item-birthday-text-color: var(--second-color);
+  --contact-details-item-label-normal-text-color: var(--second-color);
+  --contact-details-item-label-normal-background-color: var(--fourteenth-color);
+  --contact-details-item-label-active-text-color: var(--first-color);
+  --contact-details-item-label-active-background-color: var(--second-color);
+  --contact-details-item-phone-number-normal-text-color: var(--second-color);
+  --contact-details-item-phone-number-normal-background-color: var(--ninth-color);
+  --contact-details-item-phone-number-active-text-color: var(--second-color);
+  --contact-details-item-phone-number-active-background-color: var(--fourteenth-color);
+  --contact-details-item-email-address-normal-text-color: var(--second-color);
+  --contact-details-item-email-address-normal-background-color: var(--ninth-color);
+  --contact-details-item-email-address-active-text-color: var(--second-color);
+  --contact-details-item-email-address-active-background-color: var(--fourteenth-color);
+  --contact-details-item-notes-text-color: var(--second-color);
+  --contact-details-item-notes-background-color: var(--fifteenth-color);
+  --contact-details-item-notes-border-color: var(--sixteenth-color);
+  --contacts-mobile-contact-list-text-color: var(--second-color);
+  --contacts-mobile-contact-list-background-color: var(--first-color);
+  --contacts-mobile-contact-list-border-color: var(--twelfth-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --contact-details-item-label-normal-text-color: var(--second-color);
+    --contact-details-item-label-normal-background-color: var(--twelfth-color);
+    --contact-details-item-label-active-text-color: var(--second-color);
+    --contact-details-item-label-active-background-color: var(--fifteenth-color);
+  }
+}
+
+main.contacts-page {
+  .contacts {
+    display: block;
+    float: left;
+    width: 100%;
+
+    .label {
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background-color: var(--contact-details-item-label-normal-background-color);
+      color: var(--contact-details-item-label-normal-text-color);
+      padding: 0 10px;
+      display: inline-block;
+      margin: 5px 0;
+      height: @contact-list-item-height - 10px;
+      line-height: @contact-list-item-height - 10px;
+    }
+
+    .mobile-contact-list-wrapper {
+      position: relative;
+      display: none;
+
+      .mobile-contact-list {
+        display: block;
+        float: left;
+        width: 100%;
+        margin-bottom: 15px;
+        color: var(--contacts-mobile-contact-list-text-color);
+        background-color: var(--contacts-mobile-contact-list-background-color);
+        height: @contact-list-item-height;
+        line-height: @contact-list-item-height;
+        border: 1px solid var(--contacts-mobile-contact-list-border-color);
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        padding: 0 7.5px;
+        font-size: 1em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: 0;
+      }
+
+      &::after {
+        content: '\f107';
+        font-family: FontAwesome;
+        color: var(--contacts-mobile-contact-list-text-color);
+        display: inline-block;
+        position: absolute;
+        height: @contact-list-item-height;
+        line-height: @contact-list-item-height;
+        right: 7.5px;
+        top: 0;
+        font-size: 1em;
+        pointer-events: none;
+      }
+    }
+
+    .contact-list {
+      display: block;
+      float: left;
+      width: 300px;
+      background-color: var(--contact-list-background-color);
+      border: 1px solid var(--contact-list-border-color);
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px;
+
+      li {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: @contact-list-item-height;
+
+        a.contact-list-item {
+          i {
+            display: inline-block;
+            width: @contact-list-item-height;
+            height: @contact-list-item-height;
+            text-align: center;
+          }
+
+          display: inline-block;
+          width: calc(~"100% - 16px");
+          height: @contact-list-item-height;
+          line-height: @contact-list-item-height;
+          padding: 0 8px;
+          color: var(--contact-list-normal-item-text-color);
+          background-color: var(--contact-list-normal-item-background-color);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &:hover, &.active {
+            color: var(--contact-list-active-item-text-color);
+            background-color: var(--contact-list-active-item-background-color);
+          }
+        }
+      }
+    }
+
+    .contact-details {
+      position: fixed;
+      right: 15px;
+      width: calc(~"100% - 535px");
+      margin-left: 15px;
+      background-color: var(--contact-details-background-color);
+      border: 1px solid var(--contact-details-border-color);
+      overflow: hidden;
+
+      .contact-details-item {
+        position: relative;
+        display: none;
+        float: left;
+        width: calc(~"100% - 30px");
+        margin: 15px;
+
+        &.active {
+          display: block;
+        }
+
+        h2.name {
+          color: var(--contact-details-item-name-text-color);
+          margin: 0;
+        }
+
+        p.job-title {
+          color: var(--contact-details-item-job-title-text-color);
+          margin: 15px 0 0;
+        }
+
+        p.birthday {
+          color: var(--contact-details-item-birthday-text-color);
+          margin: 15px 0 0;
+        }
+
+        ul.phone-numbers {
+          display: block;
+          list-style: none;
+          margin: 15px -15px 0;
+
+          border-top: 1px solid var(--contact-list-border-color);
+          padding: 0;
+
+          li.phone-number {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid var(--contact-list-border-color);
+
+            a {
+              display: block;
+              width: calc(~"100% - 30px");
+              padding: 0 15px;
+              height: @contact-list-item-height;
+              line-height: @contact-list-item-height;
+              color: var(--contact-details-item-phone-number-normal-text-color);
+              background-color: var(--contact-details-item-phone-number-normal-background-color);
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
+              &:hover {
+                color: var(--contact-details-item-phone-number-active-text-color);
+                background-color: var(--contact-details-item-phone-number-active-background-color);
+
+                .label {
+                  color: var(--contact-details-item-label-active-text-color);
+                  background-color: var(--contact-details-item-label-active-background-color);
+                }
+              }
+            }
+          }
+        }
+
+        ul.email-addresses {
+          display: block;
+          list-style: none;
+          padding: 0;
+          margin: 15px -15px 0;
+          border-top: 1px solid var(--contact-list-border-color);
+
+
+          li.email-address {
+            display: block;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-bottom: 1px solid var(--contact-list-border-color);
+
+            a {
+              display: block;
+              width: calc(~"100% - 30px");
+              padding: 0 15px;
+              height: @contact-list-item-height;
+              line-height: @contact-list-item-height;
+              color: var(--contact-details-item-email-address-normal-text-color);
+              background-color: var(--contact-details-item-email-address-normal-background-color);
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
+              &:hover {
+                color: var(--contact-details-item-email-address-active-text-color);
+                background-color: var(--contact-details-item-email-address-active-background-color);
+
+                .label {
+                  color: var(--contact-details-item-label-active-text-color);
+                  background-color: var(--contact-details-item-label-active-background-color);
+                }
+              }
+            }
+          }
+        }
+
+        p.notes {
+          display: block;
+          margin: 15px 0 0;
+          width: calc(~"100% - 32px");
+          padding: 15px;
+          color: var(--contact-details-item-notes-text-color);
+          background-color: var(--contact-details-item-notes-background-color);
+          border: 1px solid var(--contact-details-item-notes-border-color);
+        }
+      }
+    }
+
+    @media only screen and (min-width: @mobile-breakpoint) and (max-width: @desktop-breakpoint - 1px) {
+      .contact-list {
+        width: 200px;
+      }
+
+      .contact-details {
+        width: calc(~"100% - 435px");
+      }
+    }
+
+    @media only screen and (min-width: 0px) and (max-width: @mobile-breakpoint - 1px) {
+      .mobile-contact-list-wrapper {
+        display: block;
+      }
+
+      .contact-list {
+        display: none;
+      }
+
+      .contact-details {
+        position: relative;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+    }
+
+    @media only screen and (min-width: @mobile-breakpoint) {
+      .mobile-contact-list-wrapper {
+        display: none;
+      }
+
+      .contact-list {
+        display: block;
+      }
+    }
+  }
+}

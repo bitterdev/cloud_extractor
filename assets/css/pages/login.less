@@ -1,0 +1,120 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+main.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(~"100vh - 30px");
+  max-width: 450px;
+  word-break: break-word;
+  margin: auto;
+  flex-direction: column;
+
+  h1 {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+
+  form {
+    width: 300px;
+
+    .password {
+      display: none;
+    }
+
+    .form-control {
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      direction: ltr;
+      font-size: 1em;
+      font-weight: 400;
+      display: inline-block;
+      box-sizing: border-box;
+      vertical-align: top;
+      width: 100%;
+      text-align: left;
+      background-color: var(--input-normal-background-color);
+      background-clip: padding-box;
+      -webkit-appearance: none;
+      margin: 0;
+      box-shadow: none;
+      height: 42px;
+      color: var(--input-normal-text-color);
+      padding: 0 43px 0 15px;
+      border: 1px solid var(--input-normal-border-color);
+      border-radius: 7px;
+
+      &:active, &:focus {
+        background-color: var(--input-active-background-color);
+        color: var(--input-active-text-color);
+        border: 1px solid var(--input-active-border-color);
+      }
+    }
+
+    &.password-visible {
+      .form-control-wrapper {
+        position: relative;
+
+        &.email {
+          .form-control {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+
+        &.password {
+          display: block;
+
+          .form-control {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin-top: -1px;
+          }
+        }
+
+        &.active::after {
+          font-family: "fontello";
+          position: absolute;
+          content: "\f127";
+          padding: 0 1px 0 2px;
+          color: var(--input-normal-text-color);
+          right: 10px;
+          top: 0;
+          font-size: 25px;
+          width: 25px;
+          height: 25px;
+          line-height: 40px;
+          cursor: pointer;
+          opacity: 1;
+
+        }
+      }
+    }
+
+    &.loading {
+      .form-control-wrapper {
+        &.active {
+          background-size: 25px 25px;
+          content: " ";
+          background-image: url('../../img/loading.gif');
+          background-repeat: no-repeat;
+          top: 8px;
+        }
+      }
+    }
+  }
+
+  .info-section {
+    margin-top: 17px;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+  }
+}

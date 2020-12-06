@@ -1,0 +1,126 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+@header-height: 35px;
+@language-switcher-item-height: 35px;
+@language-switcher-item-width: 180px;
+
+:root {
+  --header-background-color: var(--first-color);
+  --header-border-color: var(--twelfth-color);
+
+  --header-language-switcher-normal-item-background-color: var(--first-color);
+  --header-language-switcher-normal-item-text-color: var(--thirteenth-color);
+  --header-language-switcher-active-item-background-color: var(--fourteenth-color);
+  --header-language-switcher-active-item-text-color: var(--thirteenth-color);
+}
+
+header {
+  position: fixed;
+  height: @header-height - 1px;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: var(--header-background-color);
+  z-index: 990;
+  border-bottom: 1px solid var(--header-border-color);
+
+  nav {
+    position: absolute;
+    right: 15px;
+    height: @header-height - 1px;
+    width: auto;
+    z-index: 990;
+
+    & > ul {
+      display: block;
+      float: left;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: @language-switcher-item-width;
+
+      & > li {
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: @language-switcher-item-width;
+
+        & > a {
+          display: block;
+          float: left;
+          padding: 0 15px;
+          height: @header-height - 1px;
+          line-height: @header-height - 1px;
+          width: @language-switcher-item-width - 30px;
+          color: var(--header-language-switcher-normal-item-text-color);
+          background-color: var(--header-language-switcher-normal-item-background-color);
+          text-align: right;
+
+          &:hover, &:active {
+            color: var(--header-language-switcher-active-item-text-color);
+            background-color: var(--header-language-switcher-active-item-background-color);
+          }
+        }
+
+        & > ul {
+          display: none;
+          float: left;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          border: 1px solid var(--header-border-color);
+          width: @language-switcher-item-width - 2px;
+
+          & > li {
+            display: block;
+            float: left;
+            margin: 0;
+            padding: 0;
+            width: @language-switcher-item-width;
+
+            &:not(:first-child) {
+              & > a {
+                border-top: 1px solid var(--header-border-color);
+              }
+            }
+
+            & > a {
+              display: block;
+              float: left;
+              height: @language-switcher-item-height - 2px;
+              line-height: @language-switcher-item-height - 2px;
+              padding: 0 15px;
+              width: @language-switcher-item-width - 32px;
+              color: var(--header-language-switcher-normal-item-text-color);
+              background-color: var(--header-language-switcher-normal-item-background-color);
+              text-align: right;
+
+              &:hover, &:active {
+                color: var(--header-language-switcher-active-item-text-color);
+                background-color: var(--header-language-switcher-active-item-background-color);
+              }
+            }
+          }
+        }
+
+        &:hover {
+          & > a {
+            color: var(--header-language-switcher-active-item-text-color);
+            background-color: var(--header-language-switcher-active-item-background-color);
+          }
+
+          & > ul {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

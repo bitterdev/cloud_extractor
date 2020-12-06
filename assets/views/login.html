@@ -1,0 +1,43 @@
+<!--
+  @project:   Cloud Explorer
+
+  @author     Fabian Bitter <fabian@bitter.de>
+  @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+  @version    1.0.0
+-->
+
+<main class="login-page">
+    <h1>
+        <%= i18n.login.title %>
+    </h1>
+
+    <form>
+        <div class="form-control-wrapper email">
+            <label>
+                <input type="text" placeholder="<%= i18n.login.email %>" class="form-control">
+            </label>
+        </div>
+
+        <div class="form-control-wrapper password">
+            <label>
+                <input type="password" placeholder="<%= i18n.login.password %>" class="form-control">
+            </label>
+        </div>
+    </form>
+
+    <div class="info-section">
+        <p>
+            <a href="https://iforgot.apple.com/password/verify/appleid" target="_blank">
+                <%= i18n.login.forgotPassword %>
+            </a>
+        </p>
+
+        <p>
+            <%= i18n.login.createAccount %>
+
+            <a href="https://appleid.apple.com/account" target="_blank">
+                <%= i18n.login.createNow %>
+            </a>
+        </p>
+    </div>
+</main>

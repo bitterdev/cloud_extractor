@@ -1,0 +1,29 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+:root {
+  --full-calendar-background-color: var(--ninth-color);
+  --full-calendar-button-normal-background-color: var(--ninth-color);
+  --full-calendar-button-normal-text-color: var(--second-color);
+  --full-calendar-button-active-background-color: var(--fourteenth-color);
+  --full-calendar-button-active-text-color: var(--second-color);
+  --full-calendar-today-color: var(--ninth-color);
+  --full-calendar-accent-color: var(--eleventh-color);
+  --full-calendar-border-color: var(--twelfth-color);
+  --full-calendar-accent-link-color: var(--second-color);
+  --full-calendar-link-normal-color: var(--second-color);
+  --full-calendar-link-active-color: var(--second-color);
+}
+
+.calendar-page {
+  @media only screen and (min-width: 0px) and (max-width: @mobile-breakpoint - 1px) {
+    .fc-center {
+      display: none;
+    }
+  }
+}

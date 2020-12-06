@@ -1,0 +1,60 @@
+{
+  "languageSwitcher": {
+    "switchLanguage": "Sprache wechseln",
+    "german": "Deutsch",
+    "english": "Englisch"
+  },
+  "noResults": "Es sind keine Einträge vorhanden.",
+  "noFindMe": "Es sind keine Standort-Informationen verfügbar.",
+  "submitCode": {
+    "title": "Zwei-Faktor-Authentifizierung",
+    "text": "Eine Nachricht mit einem Bestätigungscode wurde an deine Geräte gesendet. Gib den Code ein, um fortzufahren.",
+    "backToLogin": "Zurück zur Anmeldung"
+  },
+  "confirm": {
+    "message": "Sind Sie sicher?"
+  },
+  "login": {
+    "title": "Bei iCloud anmelden",
+    "email": "Apple-ID",
+    "password": "Passwort",
+    "forgotPassword": "Apple‑ID oder Passwort vergessen?",
+    "createAccount": "Du hast noch keine Apple‑ID?",
+    "createNow": "Jetzt erstellen."
+  },
+  "photos": {
+    "altText": "Klicken Sie hier um die Datei herunterzuladen."
+  },
+  "services": {
+    "findMe": {
+      "me": "Meine Position"
+    },
+    "mails": {
+      "subject" : "Betreff",
+      "from" : "Von",
+      "sent" : "Gesendet am",
+      "prev" : "Zurück",
+      "next" : "Weiter"
+    }
+  },
+  "defaultPage": {
+    "menu": {
+      "calendar": "Kalender",
+      "contacts": "Kontakte",
+      "drive": "Drive",
+      "mails": "Mails",
+      "notes": "Notizen",
+      "photos": "Fotos",
+      "reminders": "Erinnerungen",
+      "findMe": "Finde mich",
+      "signOut": "Abmelden"
+    }
+  },
+  "map": {
+    "copyright": "&copy; <a href=\"https://openstreetmap.org/copyright\">OpenStreetMap<\/a> Mitwirkende"
+  },
+  "mails": {
+    "folders": "Ordner",
+    "empty": "Keine Nachricht vorhanden."
+  }
+}

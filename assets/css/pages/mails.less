@@ -1,0 +1,284 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+@mobile-mail-folders-item-height: 35px;
+@mobile-mail-button-height: 35px;
+
+:root {
+  --mobile-mail-folders-background-color: var(--ninth-color);
+  --mobile-mail-folders-border-color: var(--twelfth-color);
+  --mobile-mail-folders-normal-item-text-color: var(--thirteenth-color);
+  --mobile-mail-folders-normal-item-background-color: var(--ninth-color);
+  --mobile-mail-folders-active-item-text-color: var(--thirteenth-color);
+  --mobile-mail-folders-active-item-background-color: var(--fourteenth-color);
+  --contacts-mobile-mobile-mail-folders-text-color: var(--second-color);
+  --contacts-mobile-mobile-mail-folders-background-color: var(--first-color);
+  --contacts-mobile-mobile-mail-folders-border-color: var(--twelfth-color);
+
+
+  --mail-messages-table-color: var(--twelfth-color);
+  --mail-messages-list-row-normal-text-color: var(--thirteenth-color);
+  --mail-messages-list-row-normal-background-color: var(--ninth-color);
+  --mail-messages-list-row-active-text-color: var(--thirteenth-color);
+  --mail-messages-list-row-active-background-color: var(--fourteenth-color);
+
+  --mail-messages-button-normal-border-color: var(--twelfth-color);
+  --mail-messages-button-normal-background-color: var(--ninth-color);
+  --mail-messages-button-normal-text-color: var(--second-color);
+  --mail-messages-button-active-border-color: var(--twelfth-color);
+  --mail-messages-button-active-background-color: var(--fourteenth-color);
+  --mail-messages-button-active-text-color: var(--second-color);
+}
+
+main.mails-page {
+  .mails {
+    display: block;
+    float: left;
+    width: 100%;
+
+    .mobile-mail-folders-list-wrapper {
+      position: relative;
+      display: none;
+
+      .mobile-mail-folders-list {
+        display: block;
+        float: left;
+        width: 100%;
+        margin-bottom: 15px;
+        color: var(--contacts-mobile-mobile-mail-folders-text-color);
+        background-color: var(--contacts-mobile-mobile-mail-folders-background-color);
+        height: @mobile-mail-folders-item-height;
+        line-height: @mobile-mail-folders-item-height;
+        border: 1px solid var(--contacts-mobile-mobile-mail-folders-border-color);
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        padding: 0 7.5px;
+        font-size: 1em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: 0;
+      }
+
+      &::after {
+        content: '\f107';
+        font-family: FontAwesome;
+        color: var(--contacts-mobile-mobile-mail-folders-text-color);
+        display: inline-block;
+        position: absolute;
+        height: @mobile-mail-folders-item-height;
+        line-height: @mobile-mail-folders-item-height;
+        right: 7.5px;
+        top: 0;
+        font-size: 1em;
+        pointer-events: none;
+      }
+    }
+
+    .mail-folders-list {
+      position: fixed;
+      display: block;
+      float: left;
+      width: 300px;
+      background-color: var(--mobile-mail-folders-background-color);
+      border: 1px solid var(--mobile-mail-folders-border-color);
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px;
+
+      li {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: @mobile-mail-folders-item-height;
+
+        a.mail-folders-list-item {
+          i {
+            display: inline-block;
+            width: @mobile-mail-folders-item-height;
+            height: @mobile-mail-folders-item-height;
+            text-align: center;
+          }
+
+          display: inline-block;
+          width: calc(~"100% - 16px");
+          height: @mobile-mail-folders-item-height;
+          line-height: @mobile-mail-folders-item-height;
+          padding: 0 8px;
+          color: var(--mobile-mail-folders-normal-item-text-color);
+          background-color: var(--mobile-mail-folders-normal-item-background-color);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &:hover, &.active {
+            color: var(--mobile-mail-folders-active-item-text-color);
+            background-color: var(--mobile-mail-folders-active-item-background-color);
+          }
+        }
+      }
+    }
+
+    .mail-messages-list {
+      display: block;
+      float: right;
+      width: calc(~"100% - 315px");
+
+      table {
+        display: block;
+        float: left;
+        width: 100%;
+        margin-bottom: 15px;
+        border: 1px solid var(--mail-messages-table-color);
+
+        thead {
+          border-bottom: 1px solid var(--mail-messages-table-color);
+        }
+
+        thead, tbody {
+          display: block;
+          float: left;
+          width: 100%;
+
+          tr {
+            display: block;
+            float: left;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            color: var(--mail-messages-list-row-normal-text-color);
+            background-color: var(--mail-messages-list-row-normal-background-color);
+            width: 100%;
+
+
+            td, th {
+              display: block;
+              float: left;
+              text-align: left;
+              border: 0;
+              margin: 0;
+              height: @mobile-mail-button-height - 2px;
+              line-height: @mobile-mail-button-height - 2px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              padding: 0 7.5px;
+              width: calc(~"33% - 15px");
+            }
+
+            &:hover {
+              color: var(--mail-messages-list-row-active-text-color);
+              background-color: var(--mail-messages-list-row-active-background-color);
+            }
+          }
+        }
+      }
+
+      .mail-nav-buttons {
+        display: block;
+        float: right;
+        width: 100%;
+        margin-bottom: 15px;
+
+        a {
+          display: block;
+          float: right;
+          height: @mobile-mail-button-height - 2px;
+          line-height: @mobile-mail-button-height - 2px;
+          padding: 0 15px;
+          border: 1px solid var(--mail-messages-button-normal-border-color);
+          color: var(--mail-messages-button-normal-text-color);
+          background-color: var(--mail-messages-button-normal-background-color);
+
+          &.disabled {
+            cursor: not-allowed;
+          }
+
+          &:first-child {
+            margin-left: 15px;
+          }
+
+          &:not(.disabled):hover {
+            border-color: var(--mail-messages-button-active-border-color);
+            color: var(--mail-messages-button-active-text-color);
+            background-color: var(--mail-messages-button-active-background-color);
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: @mobile-breakpoint) and (max-width: @desktop-breakpoint - 1px) {
+      .mail-folders-list {
+        width: 200px;
+      }
+
+      .mail-messages-list {
+        width: calc(~"100% - 215px");
+
+        table {
+          thead, tbody {
+            tr {
+              td, th {
+                width: calc(~"50% - 15px");
+
+                &:nth-child(3) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 0px) and (max-width: @mobile-breakpoint - 1px) {
+      .mobile-mail-folders-list-wrapper {
+        display: block;
+      }
+
+      .mail-folders-list {
+        display: none;
+      }
+
+      .mail-messages-list {
+        width: 100%;
+
+        table {
+          thead, tbody {
+            tr {
+              td, th {
+                width: calc(~"100% - 15px");
+
+                &:nth-child(2) {
+                  display: none;
+                }
+
+                &:nth-child(3) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: @mobile-breakpoint) {
+      .mobile-mail-folders-list-wrapper {
+        display: none;
+      }
+
+      .mail-folders-list {
+        display: block;
+      }
+    }
+  }
+}

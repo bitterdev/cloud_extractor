@@ -1,0 +1,54 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+:root {
+  --notes-background-color: var(--fifteenth-color);
+  --notes-border-color: var(--sixteenth-color);
+  --notes-title-color: var(--second-color);
+  --notes-created-at-color: var(--second-color);
+}
+
+main.notes-page {
+  .notes {
+    display: block;
+    float: left;
+    width: 100%;
+
+    .note {
+      display: block;
+      float: left;
+      width: 100%;
+      border: 1px solid var(--notes-border-color);
+      margin-bottom: 15px;
+      background: var(--notes-background-color);
+      overflow: hidden;
+
+      .title {
+        display: block;
+        float: left;
+        width: calc(~"100% - 30px");
+        padding: 0;
+        margin: 15px 15px 7.5px;
+        color: var(--notes-title-color);
+        font-size: 1em;
+        font-weight: 500;
+      }
+
+      .created-at {
+        display: block;
+        float: left;
+        width: calc(~"100% - 30px");
+        padding: 0;
+        margin: 7.5px 15px 15px;
+        color: var(--notes-created-at-color);
+        font-size: 0.9em;
+        font-weight: 400;
+      }
+    }
+  }
+}

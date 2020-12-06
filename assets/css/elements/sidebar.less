@@ -1,0 +1,83 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+@sidebar-item-height: 35px;
+
+:root {
+  --sidebar-background-color: var(--first-color);
+  --sidebar-border-color: var(--twelfth-color);
+  --sidebar-normal-item-background-color: var(--ninth-color);
+  --sidebar-normal-item-text-color: var(--thirteenth-color);
+  --sidebar-active-item-background-color: var(--fourteenth-color);
+  --sidebar-active-item-text-color: var(--thirteenth-color);
+}
+
+body {
+  aside {
+    position: fixed;
+    left: 0;
+    top: @header-height;
+    bottom: 0;
+    background-color: var(--sidebar-background-color);
+    border-right: 1px solid var(--sidebar-border-color);
+    width: 185px;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        a {
+          i {
+            display: inline-block;
+            width: @sidebar-item-height;
+            height: @sidebar-item-height;
+            text-align: center;
+          }
+
+          display: inline-block;
+          width: calc(~"100% - 16px");
+          height: @sidebar-item-height;
+          line-height: @sidebar-item-height;
+          padding: 0 8px;
+          color: var(--sidebar-normal-item-text-color);
+          background-color: var(--sidebar-normal-item-background-color);
+          cursor: pointer;
+        }
+
+        &.active, &:hover {
+          a {
+            color: var(--sidebar-active-item-text-color);
+            background-color: var(--sidebar-active-item-background-color);
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 0px) and (max-width: @mobile-breakpoint - 1px) {
+      width: @sidebar-item-height;
+      overflow: hidden;
+
+      ul {
+        li {
+          a {
+            padding: 0;
+            width: @sidebar-item-height;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}

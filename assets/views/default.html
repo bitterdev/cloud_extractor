@@ -1,0 +1,119 @@
+<!--
+  @project:   Cloud Explorer
+
+  @author     Fabian Bitter <fabian@bitter.de>
+  @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+  @version    1.0.0
+-->
+
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="javascript:void(0);">
+                    <%= i18n.languageSwitcher.switchLanguage %> <i class="fa fa-angle-down"></i>
+                </a>
+
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);" class="switch-language-link"
+                           data-locale="en">
+                            <%= i18n.languageSwitcher.english %>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" class="switch-language-link"
+                           data-locale="de">
+                            <%= i18n.languageSwitcher.german %>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<aside>
+    <section>
+        <ul>
+            <li class="<%= path == '/calendar' ? 'active' : '' %>">
+                <a href="javascript:void(0);" class="navigate-to" data-path="/calendar">
+                    <i class="fa fa-calendar"></i>
+
+                    <%= i18n.defaultPage.menu.calendar %>
+                </a>
+            </li>
+
+            <li class="<%= path == '/contacts' ? 'active' : '' %>">
+                <a href="javascript:void(0);" class="navigate-to" data-path="/contacts">
+                    <i class="fa fa-user-o"></i>
+
+                    <%= i18n.defaultPage.menu.contacts %>
+                </a>
+            </li>
+
+            <li class="<%= path == '/drive' ? 'active' : '' %>">
+                <a href="javascript:void(0);" class="navigate-to" data-path="/drive">
+                    <i class="fa fa-file-o"></i>
+
+                    <%= i18n.defaultPage.menu.drive %>
+                </a>
+            </li>
+
+            <li class="<%= path == '/mails' ? 'active' : '' %>">
+                <a href="javascript:void(0);" class="navigate-to" data-path="/mails">
+                    <i class="fa fa-envelope-o"></i>
+
+                    <%= i18n.defaultPage.menu.mails %>
+                </a>
+            </li>
+
+            <li class="<%= path == '/notes' ? 'active' : '' %>">
+                <a href="javascript:void(0);" class="navigate-to" data-path="/notes">
+                    <i class="fa fa-sticky-note-o"></i>
+
+                    <%= i18n.defaultPage.menu.notes %>
+                </a>
+            </li>
+
+            <li class="<%= path == '/photos' ? 'active' : '' %>">
+                <a href="javascript:void(0);" class="navigate-to" data-path="/photos">
+                    <i class="fa fa-picture-o"></i>
+
+                    <%= i18n.defaultPage.menu.photos %>
+                </a>
+            </li>
+
+            <li class="<%= path == '/reminders' ? 'active' : '' %>">
+                <a href="javascript:void(0);" class="navigate-to" data-path="/reminders">
+                    <i class="fa fa-calendar-check-o"></i>
+
+                    <%= i18n.defaultPage.menu.reminders %>
+                </a>
+            </li>
+
+            <li class="<%= path == '/find-me' ? 'active' : '' %>">
+                <a href="javascript:void(0);" class="navigate-to" data-path="/find-me">
+                    <i class="fa fa-map-marker"></i>
+
+                    <%= i18n.defaultPage.menu.findMe %>
+                </a>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" id="sign-out">
+                    <i class="fa fa-sign-out"></i>
+
+                    <%= i18n.defaultPage.menu.signOut %>
+                </a>
+            </li>
+        </ul>
+    </section>
+</aside>
+
+<main class="default-page">
+    <section id="content">
+
+    </section>
+</main>

@@ -1,0 +1,23 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+
+@media (prefers-color-scheme: dark) {
+  .leaflet-tile {
+    filter: grayscale(100%);
+  }
+}
+main.find-me-page {
+
+  #map {
+    display: block;
+    float: left;
+    width: 100%;
+    height: calc(~"100vh - " (@header-height - 30px));
+  }
+}

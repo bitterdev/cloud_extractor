@@ -1,0 +1,17 @@
+<!--
+  @project:   Cloud Explorer
+
+  @author     Fabian Bitter <fabian@bitter.de>
+  @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+  @version    1.0.0
+-->
+
+<div class="photos">
+    <% for(let photo of photos) { %>
+    <div class="photo">
+        <a href="<%=photo.downloadUrl%>" target="_blank">
+            <img src="<%=photo.thumbnailUrl%>" alt="<%= i18n.photos.altText %>">
+        </a>
+    </div>
+    <% } %>
+</div>

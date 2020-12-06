@@ -1,0 +1,60 @@
+{
+  "languageSwitcher": {
+    "switchLanguage": "Switch language",
+    "german": "German",
+    "english": "English"
+  },
+  "noResults": "No records available.",
+  "noFindMe": "There is no location information available.",
+  "submitCode": {
+    "title": "Two-factor authentication",
+    "text": "A message with a verification code has been sent to your devices. Enter the code to continue.",
+    "backToLogin": "Back zu login"
+  },
+  "confirm": {
+    "message": "Are you sure?"
+  },
+  "login": {
+    "title": "Sign in to iCloud",
+    "email": "Apple-ID",
+    "password": "Password",
+    "forgotPassword": "Forgot Apple ID or password?",
+    "createAccount": "You don't have an Apple ID yet?",
+    "createNow": "Create now."
+  },
+  "photos": {
+    "altText": "Click here to download the file."
+  },
+  "services": {
+    "findMe": {
+      "me": "My position"
+    },
+    "mails": {
+      "subject" : "Subject",
+      "from" : "From",
+      "sent" : "Sent",
+      "prev" : "Prev",
+      "next" : "Next"
+    }
+  },
+  "defaultPage": {
+    "menu": {
+      "calendar": "Calendar",
+      "contacts": "Contacts",
+      "drive": "Drive",
+      "mails": "Mails",
+      "notes": "Notes",
+      "photos": "Photos",
+      "reminders": "Reminders",
+      "findMe": "Find Me",
+      "signOut": "Sign Out"
+    }
+  },
+  "map": {
+    "copyright": "&copy; <a href=\"https://openstreetmap.org/copyright\">OpenStreetMap<\/a> contributors"
+  },
+  "mails": {
+    "folders": "Folders",
+    "empty": "No messages available."
+  }
+}

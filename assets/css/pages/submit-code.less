@@ -1,0 +1,85 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+main.submit-code-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(~"100vh - 30px");
+  max-width: 380px;
+  word-break: break-word;
+  margin: auto;
+  flex-direction: column;
+
+  h1 {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+
+  form {
+
+    .form-control-group {
+      display: inline-block;
+
+      &:nth-child(1) {
+        margin-right: 10px;
+        margin-left: 15px;
+      }
+
+      &:nth-child(2) {
+        margin-left: 10px;
+      }
+    }
+
+    .form-control {
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      direction: ltr;
+      background-color: var(--input-normal-background-color);
+      box-shadow: none;
+      color: var(--input-normal-text-color);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      line-height: 1.29412;
+      font-weight: 400;
+      letter-spacing: -.021em;
+      font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+      display: inline-block;
+      box-sizing: border-box;
+      vertical-align: top;
+      border: 1px solid var(--input-normal-border-color);
+      border-radius: 4px;
+      background-clip: padding-box;
+      -webkit-appearance: none;
+      width: 45px;
+      height: 45px;
+      font-size: 1.5em;
+      padding: 0;
+      text-align: center;
+      margin: 0 3px 14px 3px;
+
+      @media only screen and (min-width: 0px) and (max-width: @mobile-breakpoint - 1px) {
+        width: 35px;
+        height: 35px;
+      }
+
+      &:active, &:focus {
+        background-color: var(--input-active-background-color);
+        color: var(--input-active-text-color);
+        border: 1px solid var(--input-active-border-color);
+      }
+    }
+  }
+
+  .info-section {
+    margin-top: 17px;
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+  }
+}

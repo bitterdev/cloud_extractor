@@ -1,0 +1,21 @@
+<!--
+  @project:   Cloud Explorer
+
+  @author     Fabian Bitter <fabian@bitter.de>
+  @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+  @version    1.0.0
+-->
+
+<div class="notes">
+    <% for(let note of notes) { %>
+    <div class="note">
+        <h2 class="title">
+            <%=note.title%>
+        </h2>
+
+        <p class="created-at">
+            <%=note.createdAt%>
+        </p>
+    </div>
+    <% } %>
+</div>

@@ -1,0 +1,64 @@
+<!--
+  @project:   Cloud Explorer
+
+  @author     Fabian Bitter <fabian@bitter.de>
+  @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+  @version    1.0.0
+-->
+
+<main class="submit-code-page">
+    <h1>
+        <%= i18n.submitCode.title %>
+    </h1>
+
+    <form>
+        <div class="form-control-group">
+            <label>
+                <input maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false"
+                       type="tel" class="form-control" data-index="0">
+            </label>
+
+            <label>
+                <input maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false"
+                       type="tel" class="form-control" data-index="1">
+            </label>
+
+            <label>
+                <input maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false"
+                       type="tel" class="form-control" data-index="2">
+            </label>
+        </div>
+
+        <div class="form-control-group">
+            <label>
+                <input maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false"
+                       type="tel"
+                       class="form-control" data-index="3">
+            </label>
+
+            <label>
+                <input maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false"
+                       type="tel"
+                       class="form-control" data-index="4">
+            </label>
+
+            <label>
+                <input maxlength="1" autocomplete="off" autocapitalize="off" spellcheck="false"
+                       type="tel"
+                       class="form-control" data-index="5">
+            </label>
+        </div>
+    </form>
+
+    <div class="info-section">
+        <p>
+            <%= i18n.submitCode.text %>
+        </p>
+
+        <p>
+            <a href="javascript:void(0);" id="backToLogin">
+                <i class="fa fa-angle-left"></i> <%= i18n.submitCode.backToLogin %>
+            </a>
+        </p>
+    </div>
+</main>

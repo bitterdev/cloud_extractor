@@ -1,0 +1,80 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+:root {
+  --photos-border-color: var(--twelfth-color);
+  --photos-background-color: var(--fourth-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --photos-border-color: var(--twelfth-color);
+    --photos-background-color: var(--first-color);
+  }
+}
+
+main.photos-page {
+  .photos {
+    display: block;
+    float: left;
+    width: calc(~"100% + 15px");
+
+    .photo {
+      position: relative;
+      display: block;
+      float: left;
+      width: calc(25% - 17px);
+      border: 1px solid var(--photos-border-color);
+      margin-right: 15px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      height: 200px;
+      background: var(--photos-background-color);
+
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+          display: block;
+          margin: auto;
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 0px) and (max-width: @mobile-breakpoint - 1px) {
+      .photo {
+        width: calc(~"100% - 17px");
+        margin-left: 0;
+      }
+    }
+
+    @media only screen and (min-width: @mobile-breakpoint) and (max-width: @tablet-breakpoint - 1px) {
+      .photo {
+        width: calc(~"50% - 17px");
+      }
+    }
+
+    @media only screen and (min-width: @tablet-breakpoint) and (max-width: @desktop-breakpoint - 1px) {
+      .photo {
+        width: calc(~"25% - 17px");
+      }
+    }
+
+    @media only screen and (min-width: @desktop-breakpoint) {
+      .photo {
+        width: calc(~"20% - 17px");
+      }
+    }
+  }
+}

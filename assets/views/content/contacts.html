@@ -1,0 +1,87 @@
+<!--
+  @project:   Cloud Explorer
+
+  @author     Fabian Bitter <fabian@bitter.de>
+  @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+  @version    1.0.0
+-->
+
+<div class="contacts">
+    <div class="mobile-contact-list-wrapper">
+        <select class="mobile-contact-list">
+            <% for(let contact of contacts) { %>
+                <option value="<%=contact.contactId%>">
+                    <%=contact.displayName%>
+                </option>
+            <% } %>
+        </select>
+    </div>
+
+    <ul class="contact-list">
+        <% for(let contact of contacts) { %>
+        <li>
+            <a href="javascript:void(0);" data-contact-id="<%=contact.contactId%>" class="contact-list-item">
+                <% if (contact.isCompany) { %>
+                <i class="fa fa-building"></i> <%=contact.displayName%>
+                <% } else { %>
+                <i class="fa fa-user"></i> <%=contact.displayName%>
+                <% } %>
+            </a>
+        </li>
+        <% } %>
+    </ul>
+
+    <div class="contact-details">
+        <% for(let contact of contacts) { %>
+        <div data-contact-id="<%=contact.contactId%>" class="contact-details-item">
+            <h2 class="name">
+                <i class="fa fa-user"></i> <%=contact.displayName%>
+            </h2>
+
+            <p class="job-title">
+                <i class="fa fa-building"></i> <%=contact.jobTitle%>
+            </p>
+
+            <p class="birthday">
+                <i class="fa fa-birthday-cake"></i> <%=contact.birthday%>
+            </p>
+
+            <ul class="phone-numbers">
+                <% for(let phoneNumber of contact.phoneNumbers) { %>
+                <li class="phone-number">
+                    <a href="tel:<%=phoneNumber.phoneNumber%>">
+                        <span class="label">
+                            <i class="fa fa-phone"></i> <%=phoneNumber.label%>
+                        </span>
+
+                        <span class="value">
+                            <%=phoneNumber.phoneNumber%>
+                        </span>
+                    </a>
+                </li>
+                <% } %>
+            </ul>
+
+            <ul class="email-addresses">
+                <% for(let emailAddress of contact.emailAddresses) { %>
+                <li class="email-address">
+                    <a href="mailto:<%=emailAddress.emailAddress%>">
+                        <span class="label">
+                            <i class="fa fa-envelope"></i> <%=emailAddress.label%>
+                        </span>
+
+                        <span class="value">
+                            <%=emailAddress.emailAddress%>
+                        </span>
+                    </a>
+                </li>
+                <% } %>
+            </ul>
+
+            <p class="notes">
+                <%=contact.notes%>
+            </p>
+        </div>
+        <% } %>
+    </div>
+</div>

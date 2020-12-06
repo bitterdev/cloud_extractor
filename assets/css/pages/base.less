@@ -1,0 +1,41 @@
+/**
+ * @project:   Cloud Explorer
+ *
+ * @author     Fabian Bitter <fabian@bitter.de>
+ * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
+ * @version    1.0.0
+ */
+
+:root {
+  --background-color: var(--first-color);
+  --text-color: var(--second-color);
+  --link-normal-color: var(--third-color);
+  --link-active-color: var(--third-color);
+  --input-normal-background-color: var(--fourth-color);
+  --input-normal-border-color: var(--fifth-color);
+  --input-normal-text-color: var(--second-color);
+  --input-active-background-color: var(--fourth-color);
+  --input-active-border-color: var(--sixth-color);
+  --input-active-text-color: var(--second-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --input-normal-text-color: var(--first-color);
+    --input-active-text-color: var(--first-color);
+  }
+}
+
+main {
+
+  #content {
+    margin-top: @header-height;
+  }
+
+  margin-left: 185px;
+  padding: 15px;
+
+  @media only screen and (min-width: 0px) and (max-width: @mobile-breakpoint - 1px) {
+    margin-left: @sidebar-item-height;
+  }
+}
